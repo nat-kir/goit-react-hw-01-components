@@ -1,0 +1,39 @@
+.conteiner {
+  margin: 0 auto;
+  text-align: center;
+  width: 268px;
+  height: 130px;
+  filter: drop-shadow(0px 2px 1px rgba(2, 2, 2, 0.02));
+  background-color: #ffffff;
+  font-family: sans-serif;
+  border: 1px solid antiquewhite;
+}
+
+.title {
+  margin: 0;
+  line-height: 70px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #475965;
+  font-weight: bold;
+}
+
+.stats {
+  display: flex;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.label {
+  line-height: 30px;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.percentage {
+  font-size: 18px;
+  color: #ffffff;
+}
