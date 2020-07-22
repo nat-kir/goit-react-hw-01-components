@@ -1,29 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultImage from '../../components/task1/Profile_default_image.png';
 import styles from './FriendsList.module.css';
+import ListItem from './ListItem';
 
 const FriendsList = ({ friends }) => (
   <ul>
-    {friends.map(({ avatar, name, isOnline, id }) => (
+    {friends.map(({ id, isOnline, avatar, name }) => (
       <li className={styles.listItem} key={id}>
-        <span className={styles[isOnline]}>{isOnline}</span>
-        <img className={styles.avatar} src={avatar} alt={name} width="48" />
-        <p className={styles.name}>{name}</p>
+        <ListItem avatar={avatar} name={name} isOnline={isOnline} />
       </li>
     ))}
   </ul>
 );
 
-FriendsList.defaultProps = {
-  avatar: defaultImage,
-};
-
 FriendsList.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
-  id: PropTypes.number.isRequired,
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default FriendsList;
